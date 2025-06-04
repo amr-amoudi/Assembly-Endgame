@@ -1,10 +1,16 @@
 import type {language} from "../../types/language.ts";
 
 
-export default function LanguageElement(language: language){
+export default function LanguageElement(language: language) {
     return (
-        <div className={`bg-${language.backgroundColor}-500 text-${language.color}-500 w-fit h-fit p-5`}>
+        <div
+            style={{
+                backgroundColor: language.backgroundColor,
+                color: language.color,
+            }}
+            className="w-fit h-fit p-2 rounded-lg shadow-lg"
+        >
             {language.name}
         </div>
-    )
+    );
 }

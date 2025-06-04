@@ -5,3 +5,7 @@
 body{
     background-color: #282726;
 }
+
+.custom-font {
+    font-family: 'Hanken Grotesk', Courier, monospace;
+}
