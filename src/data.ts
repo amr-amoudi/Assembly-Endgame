@@ -533,9 +533,9 @@ export const languages: language[] = [
     },
 ]
 
-export default function getRandomWord(): string {
+export function getRandomWord(): string {
     return words[Math.floor(Math.random() * words.length)]
-};
+}
 
 export function getFarewellText(languageName: string) {
     const options = [
