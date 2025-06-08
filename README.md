@@ -44,12 +44,6 @@ npm run dev
 
 ---
 
-## 🙌 Made with love (and tears) by \[Your Name]
-
-**Good luck... or get ready to suffer in Assembly.** 🧍‍♂️💻🔥
-
----
-
 ## 📄 License
 
 it's under the MIT license, have fun
