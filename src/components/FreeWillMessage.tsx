@@ -29,9 +29,9 @@ export default function FreeWillMessage({children, isWon, isLost, display}: Free
     }
 
     return (
-        <div className={`h-full
+        <div className={`h-[60px]
                 ${display ? 'opacity-100' : 'opacity-0'} w-full
-                max-w-[350px] h-[60px]
+                max-w-[350px]
                 flex items-center justify-center 
                 rounded-lg shadow-lg my-5 custom-font 
                 font-bold italic text-[#f9f4da] ${isWon ? 'bg-[#10a95b]' : isLost ? 'bg-[#ba2a2a]' : 'bg-[#7a5ea7]'} text-lg flex-col`}>

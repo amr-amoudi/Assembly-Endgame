@@ -12,7 +12,8 @@ export default function App(){
     const letters = 'abcdefghijklmnopqrstuvwxyz';
     const wrongGuesses: number = guessedLetters.split('').filter((letter) => (!word.includes(letter))).length
     const isWon:boolean = word.every((letter) => guessedLetters.includes(letter));
-    const isLost:boolean = wrongGuesses > 7 ;
+    const isLost:boolean = wrongGuesses > 7;
+    const displayFreeWillMessage:boolean = isWon ? true : !word.includes(guessedLetters[guessedLetters.length - 1]);
 
     function handleLetterButtonClick(letter: string) {
         setGuessedLetters(prev => {
@@ -30,7 +31,7 @@ export default function App(){
 
             <Header />
 
-            <FreeWillMessage display={wrongGuesses > 0} isLost={isLost} isWon={isWon}>
+            <FreeWillMessage display={wrongGuesses > 0 && displayFreeWillMessage} isLost={isLost} isWon={isWon}>
                 {getFarewellText(languages[wrongGuesses - 1]?.name)}
             </FreeWillMessage>
 
@@ -54,7 +55,7 @@ export default function App(){
                     )
                 })}
             </div>
-            <div className={'gap-2 flex flex-wrap justify-center w-62 p-5'}>
+            <div className={'gap-2 flex flex-wrap justify-center w-62 p-5 max-w-[650px]'}>
                 {letters.split('').map((letter) => {
                     const isClicked = guessedLetters.includes(letter);
                     const isRight = word.includes(letter);
