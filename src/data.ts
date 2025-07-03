@@ -483,7 +483,7 @@ export const words: string[] = [
   "young"
 ];
 
-import type { language } from "../types/types.ts";
+import type { language, wordData } from "../types/types.ts";
 
 export const languages: language[] = [
   {
@@ -533,14 +533,16 @@ export const languages: language[] = [
   },
 ]
 
-export function getRandomWord(): Map<string, string> {
+export function getRandomWord(): wordData {
   const map = new Map<string, string>()
-  words[Math.floor(Math.random() * words.length)].split('').forEach((word: string) => {
-    map.set(word, word)
+  const word = words[Math.floor(Math.random() * words.length)]
+  word.split('').forEach((letter: string) => {
+    map.set(letter, letter)
   });
 
-
-  return map
+  // will return the whole word as a full string and the Map
+  // this is because the Map removes all duplicates so in some cases you need the full word
+  return { word, map }
 }
 
 export function getFarewellText(languageName: string) {
