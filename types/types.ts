@@ -10,3 +10,4 @@ export interface GameState {
   wrongGuesses: number
 }
 
+export type wordData = { word: string, map: Map<string, string> } 
